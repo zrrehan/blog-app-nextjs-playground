@@ -16,13 +16,27 @@ import {
 } from "@/components/ui/sidebar"
 import { ReactNode } from "react"
 
-export default function DashboardLayout({children}: {children: ReactNode}) {
+export default function DashboardLayout({children, user, admin}: 
+  {
+    children: ReactNode,
+    user: ReactNode, 
+    admin: ReactNode
+
+  }) {
+  
+  const userInfo = {
+    role: "User"
+  }
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <AppSidebar userInfo={userInfo}/>
       <SidebarInset>
         <div className="flex flex-1 flex-col gap-4 p-4">
           {children}
+          
+          {
+            userInfo.role === "Admin" ? admin : user
+          }
         </div>
       </SidebarInset>
     </SidebarProvider>
