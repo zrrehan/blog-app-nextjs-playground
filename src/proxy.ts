@@ -10,7 +10,7 @@ export async function proxy(request: NextRequest) {
     let isAdmin = false 
 
 
-    console.log(pathname);
+    // console.log(pathname);
     if(user) {
         isVerified = true
     }

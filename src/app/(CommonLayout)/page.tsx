@@ -17,7 +17,7 @@ export default async function Home() {
     // const session = await authClient.getSession()
     // console.log(session);
 
-    const {success ,session, user} = await userServices.getSession(); 
+    // const {success ,session, user} = await userServices.getSession(); 
     const {data} = await blogService.getBlogPosts({
         isFeatured: false,
         search: ""

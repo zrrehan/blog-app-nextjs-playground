@@ -19,9 +19,9 @@ const getBlogPosts = async (params?:Params)  => {
                 url.searchParams.append(key, value as string);
             });
         }
-        console.log(url);
-        const result = await fetch(url.toString()); 
-        // const result = await fetch(`${API_URL}/posts`, {cache: "no-store"}); 
+
+        // const result = await fetch(url.toString()); 
+        const result = await fetch(`${API_URL}/posts`, {cache: "no-store"}); 
         // const result = await fetch(`${API_URL}/posts`); 
         const data = await result.json();
         return {
